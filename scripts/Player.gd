@@ -41,6 +41,12 @@ func _physics_process(delta):
 	handleJumps()
 	
 	motion = move_and_slide(motion, UP)
+	
+	if is_on_floor() and abs(motion.x) > 0.5:
+		$Sprite.play("Walk")
+	else:
+		$Sprite.play("Idle")
+	
 	pass
 
 func handleJumps():
