@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Jumpogg.ogg-c1f19c719dc959bf2273cd121b476d93.oggstr"
+
+[deps]
+
+source_file="res://sounds/Jumpogg.ogg"
+source_md5="f11302e1ba3925f8d29b3b5602c6b1fb"
+
+dest_files=[ "res://.import/Jumpogg.ogg-c1f19c719dc959bf2273cd121b476d93.oggstr" ]
+dest_md5="33d1ba5513fa937d215247ced855e504"
+
+[params]
+
+loop=true
+loop_offset=0
