@@ -18,10 +18,10 @@ func _physics_process(delta):
 	motion.y += GRAVITY
 	var friction = false
 	
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("player_right"):
 		motion.x = min(motion.x + ACCELERATION, MAX_SPEED);
 		$Sprite.flip_h = false
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("player_left"):
 		motion.x = max(motion.x - ACCELERATION, -MAX_SPEED);
 		$Sprite.flip_h = true
 	else:
@@ -55,18 +55,18 @@ func handleJumps():
 		jumpCnt = 0
 		
 		#first jump
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("player_jump"):
 			motion.y -= JUMP_POWER
 			jumpCnt += 1
 	
 	#mid air not touching wall
-	if !is_on_floor() and !is_on_wall() and jumpCnt < 2 and Input.is_action_just_pressed("ui_up"):
+	if !is_on_floor() and !is_on_wall() and jumpCnt < 2 and Input.is_action_just_pressed("player_jump"):
 		motion.y -= JUMP_POWER
 		jumpCnt += 1
 	
 	
 	#wall jump
-	if is_on_wall() and !is_on_floor() and Input.is_action_just_pressed("ui_up"):
+	if is_on_wall() and !is_on_floor() and Input.is_action_just_pressed("player_jump"):
 		jumpCnt = 4
 		var left = test_move(transform, Vector2(1,0))
 		motion.y -= JUMP_POWER
