@@ -27,7 +27,7 @@ func _ready():
 	self.position = offset
 	randomize()
 	width = 15
-	height = 15
+	height = 8
 	
 	for x in range(width):
 		grid.append([])

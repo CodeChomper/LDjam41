@@ -15,7 +15,7 @@ func _ready():
 	$Menu/TextureButton.hide()
 	mazeA = mazeScene.instance()
 	mazeA.connect("maze_built", self, "_on_maze_built")
-	mazeA.offset = Vector2(0,700)
+	mazeA.offset = Vector2(0,1700)
 	
 	add_child(mazeA)
 	
@@ -28,6 +28,7 @@ func _ready():
 
 func _on_maze_built():
 	$Menu/TextureButton.show()
+	$Menu/BuildingText.hide()
 
 
 func _on_TextureButton_pressed():
