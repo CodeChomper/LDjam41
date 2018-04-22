@@ -1,17 +1,11 @@
 extends Node2D
 
 var visited
-var up
-var down
-var left
-var right
+var pos = Vector2()
 
 func _ready():
 	visited = false
-	up = true
-	down = true
-	left = true
-	right = true
+	
 	pass
 
 #func _process(delta):

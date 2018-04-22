@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="LDjam41"
-run/main_scene="res://scenes/TestMap.tscn"
+run/main_scene="res://scenes/Game.tscn"
 config/icon="res://art/player.png"
 
 [input]

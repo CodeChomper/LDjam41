@@ -9,6 +9,7 @@ const WALL_BOUNCE = 450
 var motion = Vector2()
 var spawnPos = Vector2()
 var jumpCnt = 0
+var health = 100
 
 func _ready():
 	spawnPos = position
@@ -73,7 +74,7 @@ func handleJumps():
 		motion.x = -WALL_BOUNCE if left else WALL_BOUNCE
 
 func _process(delta):
-	if position.y > 700.0 and $ResponTimer.is_stopped():
+	if health <= 0 and $ResponTimer.is_stopped():
 		$DeathSound.play()
 		$ResponTimer.start()
 	
