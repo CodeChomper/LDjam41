@@ -15,6 +15,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Global.codes = 0
 	$Menu/TextureButton.hide()
+	$Menu/LevelLabel.text = "Level: " + str(Global.level + 1)
 	mazeA = mazeScene.instance()
 	var level = Global.get_next_level()
 	mazeA.width = level + 4

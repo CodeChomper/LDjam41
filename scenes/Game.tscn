@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Maze.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Menu.tscn" type="PackedScene" id=4]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" index="0"]
 
 script = ExtResource( 1 )
 playerScene = ExtResource( 2 )
@@ -15,9 +15,13 @@ mazeScene = ExtResource( 3 )
 
 editor/display_folded = true
 
-[node name="BuildingText" parent="Menu" index="2"]
+[node name="AnimatedSprite" parent="Menu" index="2"]
 
 frame = 1
+
+[node name="AnimatedSprite2" parent="Menu" index="3"]
+
+frame = 3
 
 [connection signal="pressed" from="Menu/TextureButton" to="." method="_on_TextureButton_pressed"]
 

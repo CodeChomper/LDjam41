@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://art/PlayButton/frame1.png" type="Texture" id=1]
 [ext_resource path="res://art/PlayButton/frame2.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://art/Chomper/frame3.png" type="Texture" id=11]
 [ext_resource path="res://art/Chomper/frame4.png" type="Texture" id=12]
 [ext_resource path="res://art/Chomper/frame5.png" type="Texture" id=13]
+[ext_resource path="res://fonts/8Bit.tres" type="DynamicFont" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -49,10 +50,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 288.0
-margin_top = 384.0
-margin_right = 444.0
-margin_bottom = 459.0
+margin_left = 341.0
+margin_top = 464.0
+margin_right = 497.0
+margin_bottom = 539.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -73,10 +74,10 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="BuildingText" type="AnimatedSprite" parent="." index="1"]
 
-position = Vector2( 380.416, 414.84 )
+position = Vector2( 433.862, 495.009 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
@@ -84,6 +85,7 @@ playing = true
 position = Vector2( 379.133, 133.615 )
 frames = SubResource( 2 )
 animation = "default"
+frame = 2
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="3"]
@@ -91,7 +93,31 @@ playing = true
 position = Vector2( 915.263, 397.505 )
 frames = SubResource( 3 )
 animation = "default"
-frame = 5
+frame = 7
 playing = true
+
+[node name="LevelLabel" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 295.0
+margin_right = 818.0
+margin_bottom = 348.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+text = "Level"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 
