@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/DoorUnlock.wav-1d006c00727382ea12edef8130c09778.sample"
+
+[deps]
+
+source_file="res://sounds/DoorUnlock.wav"
+source_md5="4117bdf9f79fb344c54ce1769c4f0801"
+
+dest_files=[ "res://.import/DoorUnlock.wav-1d006c00727382ea12edef8130c09778.sample" ]
+dest_md5="99c2f5776762fff38cabe688bfe91e71"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

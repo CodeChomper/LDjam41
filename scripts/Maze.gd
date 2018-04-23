@@ -114,6 +114,8 @@ func make_maze():
 func _on_collect_code(obj):
 	remove_child(obj)
 	Global.codes += 1
+	if Global.codes >= 3:
+		exit.unlockSound.play()
 	
 
 func place_codes():

@@ -1,16 +1,41 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://art/PlayButton/Intro.png" type="Texture" id=1]
-[ext_resource path="res://art/PlayButton/frame1.png" type="Texture" id=2]
-[ext_resource path="res://art/PlayButton/frame2.png" type="Texture" id=3]
-[ext_resource path="res://art/BuildingMaze/frame1.png" type="Texture" id=4]
-[ext_resource path="res://art/BuildingMaze/frame2.png" type="Texture" id=5]
-[ext_resource path="res://art/BuildingMaze/frame3.png" type="Texture" id=6]
+[ext_resource path="res://art/PlayButton/frame1.png" type="Texture" id=1]
+[ext_resource path="res://art/PlayButton/frame2.png" type="Texture" id=2]
+[ext_resource path="res://art/BuildingMaze/frame1.png" type="Texture" id=3]
+[ext_resource path="res://art/BuildingMaze/frame2.png" type="Texture" id=4]
+[ext_resource path="res://art/BuildingMaze/frame3.png" type="Texture" id=5]
+[ext_resource path="res://art/Title/frame1.png" type="Texture" id=6]
+[ext_resource path="res://art/Title/frame2.png" type="Texture" id=7]
+[ext_resource path="res://art/Title/frame3.png" type="Texture" id=8]
+[ext_resource path="res://art/Chomper/frame1.png" type="Texture" id=9]
+[ext_resource path="res://art/Chomper/frame2.png" type="Texture" id=10]
+[ext_resource path="res://art/Chomper/frame3.png" type="Texture" id=11]
+[ext_resource path="res://art/Chomper/frame4.png" type="Texture" id=12]
+[ext_resource path="res://art/Chomper/frame5.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -18,13 +43,7 @@ animations = [ {
 
 [node name="Menu" type="Node"]
 
-[node name="Intro" type="Sprite" parent="." index="0"]
-
-position = Vector2( 512, 301 )
-texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="TextureButton" type="TextureButton" parent="." index="1"]
+[node name="TextureButton" type="TextureButton" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -45,18 +64,34 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
-texture_disabled = ExtResource( 2 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 1 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="BuildingText" type="AnimatedSprite" parent="." index="2"]
+[node name="BuildingText" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 380.416, 414.84 )
 frames = SubResource( 1 )
 animation = "default"
+frame = 2
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 379.133, 133.615 )
+frames = SubResource( 2 )
+animation = "default"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 915.263, 397.505 )
+frames = SubResource( 3 )
+animation = "default"
+frame = 5
 playing = true
 
 

@@ -12,6 +12,7 @@ var mazeA
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	Global.codes = 0
 	$Menu/TextureButton.hide()
 	mazeA = mazeScene.instance()
@@ -45,6 +46,7 @@ func _on_maze_built():
 
 
 func _on_TextureButton_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$Menu/TextureButton.hide()
 	mazeA.timerStart = true
 	player = playerScene.instance()

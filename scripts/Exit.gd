@@ -4,10 +4,11 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 signal exit_touched
+var unlockSound
 var doorSprite
-
 func _ready():
 	doorSprite = $Area2D/DoorSprite
+	unlockSound = $UnlockSound
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass

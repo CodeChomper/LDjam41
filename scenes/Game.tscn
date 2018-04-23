@@ -15,6 +15,10 @@ mazeScene = ExtResource( 3 )
 
 editor/display_folded = true
 
+[node name="BuildingText" parent="Menu" index="2"]
+
+frame = 1
+
 [connection signal="pressed" from="Menu/TextureButton" to="." method="_on_TextureButton_pressed"]
 
 

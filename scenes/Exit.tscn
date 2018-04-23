@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/Exit.gd" type="Script" id=1]
-[ext_resource path="res://art/Exit/frame7.png" type="Texture" id=2]
-[ext_resource path="res://art/Exit/frame1.png" type="Texture" id=3]
-[ext_resource path="res://art/Exit/frame2.png" type="Texture" id=4]
-[ext_resource path="res://art/Exit/frame3.png" type="Texture" id=5]
-[ext_resource path="res://art/Exit/frame4.png" type="Texture" id=6]
-[ext_resource path="res://art/Exit/frame5.png" type="Texture" id=7]
-[ext_resource path="res://art/Exit/frame6.png" type="Texture" id=8]
+[ext_resource path="res://sounds/DoorUnlock.wav" type="AudioStream" id=2]
+[ext_resource path="res://art/Exit/frame7.png" type="Texture" id=3]
+[ext_resource path="res://art/Exit/frame1.png" type="Texture" id=4]
+[ext_resource path="res://art/Exit/frame2.png" type="Texture" id=5]
+[ext_resource path="res://art/Exit/frame3.png" type="Texture" id=6]
+[ext_resource path="res://art/Exit/frame4.png" type="Texture" id=7]
+[ext_resource path="res://art/Exit/frame5.png" type="Texture" id=8]
+[ext_resource path="res://art/Exit/frame6.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -17,12 +18,12 @@ extents = Vector2( 14.2586, 15.3567 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "NotActive",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Active",
 "speed": 5.0
@@ -34,7 +35,15 @@ scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="." index="0"]
+[node name="UnlockSound" type="AudioStreamPlayer" parent="." index="0"]
+
+stream = ExtResource( 2 )
+volume_db = -20.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Area2D" type="Area2D" parent="." index="1"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
