@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Maze.gd" type="Script" id=1]
 [ext_resource path="res://scenes/MazeNode.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Puck.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Exit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Code.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/8Bit.tres" type="DynamicFont" id=6]
 
 [node name="Maze" type="Node2D" index="0"]
 
@@ -12,6 +14,7 @@ _sections_unfolded = [ "Transform" ]
 mazeNode = ExtResource( 2 )
 puckObj = ExtResource( 3 )
 exitScene = ExtResource( 4 )
+codeScene = ExtResource( 5 )
 offset = Vector2( 0, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
@@ -39,5 +42,46 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="Timer" type="Timer" parent="." index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="UI" type="CanvasLayer" parent="." index="2"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="TimeLeftLabel" type="Label" parent="UI" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 20.0
+margin_right = 168.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "00:00"
+align = 3
+valign = 3
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 

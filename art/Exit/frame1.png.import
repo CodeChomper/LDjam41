@@ -7,10 +7,10 @@ path="res://.import/frame1.png-f0513f966d1afb275ea4008845b3ff64.stex"
 [deps]
 
 source_file="res://art/Exit/frame1.png"
-source_md5="e9a7e698d7f18cd06adad566d1bba8f1"
+source_md5="5f46bceb5af2493ffdcc9b7a2206801c"
 
 dest_files=[ "res://.import/frame1.png-f0513f966d1afb275ea4008845b3ff64.stex" ]
-dest_md5="309b9de68d942e4711883dbd72f5a274"
+dest_md5="d2dea30ba49ddd21d2c9ea5d2422bf13"
 
 [params]
 

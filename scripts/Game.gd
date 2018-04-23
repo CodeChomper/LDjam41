@@ -12,8 +12,12 @@ var mazeA
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
+	Global.codes = 0
 	$Menu/TextureButton.hide()
 	mazeA = mazeScene.instance()
+	var level = Global.get_next_level()
+	mazeA.width = level + 4
+	mazeA.height = level  + 4
 	mazeA.connect("maze_built", self, "_on_maze_built")
 	mazeA.offset = Vector2(0,1700)
 	
@@ -21,18 +25,28 @@ func _ready():
 	
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _on_exit_touched():
+	if Global.codes == 3:
+		get_tree().reload_current_scene()
+
+func _process(delta):
+	if Global.codes == 3:
+		mazeA.exit.show()
+	# Called every frame. Delta is time since last frame.
+	if player and mazeA and mazeA.timeLeft <= 0:
+		player.health = 0
+	pass
 
 func _on_maze_built():
+	mazeA.exit.connect("exit_touched", self, "_on_exit_touched")
 	$Menu/TextureButton.show()
+	$Menu/TextureButton.grab_focus()
 	$Menu/BuildingText.hide()
 
 
 func _on_TextureButton_pressed():
 	$Menu/TextureButton.hide()
+	mazeA.timerStart = true
 	player = playerScene.instance()
 	player.position = mazeA.offset
 	player.position.x += 32

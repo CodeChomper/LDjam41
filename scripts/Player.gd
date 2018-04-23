@@ -3,7 +3,7 @@ extends KinematicBody2D
 const UP = Vector2(0,-1)
 const GRAVITY = 20
 const ACCELERATION = 50
-const MAX_SPEED = 200
+const MAX_SPEED = 300
 const JUMP_POWER = 500
 const WALL_BOUNCE = 450
 var motion = Vector2()
@@ -59,11 +59,13 @@ func handleJumps():
 		if Input.is_action_just_pressed("player_jump"):
 			motion.y -= JUMP_POWER
 			jumpCnt += 1
+			$JumpSound.play()
 	
 	#mid air not touching wall
 	if !is_on_floor() and !is_on_wall() and jumpCnt < 2 and Input.is_action_just_pressed("player_jump"):
 		motion.y -= JUMP_POWER
 		jumpCnt += 1
+		$JumpSound.play()
 	
 	
 	#wall jump
@@ -72,11 +74,13 @@ func handleJumps():
 		var left = test_move(transform, Vector2(1,0))
 		motion.y -= JUMP_POWER
 		motion.x = -WALL_BOUNCE if left else WALL_BOUNCE
+		$JumpSound.play()
 
 func _process(delta):
 	if health <= 0 and $ResponTimer.is_stopped():
 		$DeathSound.play()
 		$ResponTimer.start()
+		Global.level = 0
 	
 
 func _on_ResponTimer_timeout():
@@ -84,5 +88,5 @@ func _on_ResponTimer_timeout():
 	$DeathSound.stop()
 	motion.y = 0
 	motion.x = 0
-	position = spawnPos
+	get_tree().reload_current_scene()
 	
